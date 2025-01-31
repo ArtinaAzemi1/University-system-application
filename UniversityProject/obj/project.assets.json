@@ -433,11 +433,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Gorenje\\source\\repos\\UniversityProject\\UniversityProject.csproj",
+      "projectUniqueName": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\UniversityProject.csproj",
       "projectName": "UniversityProject",
-      "projectPath": "C:\\Users\\Gorenje\\source\\repos\\UniversityProject\\UniversityProject.csproj",
+      "projectPath": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\UniversityProject.csproj",
       "packagesPath": "C:\\Users\\Gorenje\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Gorenje\\source\\repos\\UniversityProject\\obj\\",
+      "outputPath": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Gorenje\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "B6zoolCRaHA=",
+  "dgSpecHash": "BWzjm090ork=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Gorenje\\source\\repos\\UniversityProject\\UniversityProject.csproj",
+  "projectFilePath": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\UniversityProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gorenje\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\Gorenje\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
