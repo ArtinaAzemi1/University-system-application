@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
+using UniversityProject.Models;
 
 namespace UniversityProject.Data
 {
@@ -6,7 +8,8 @@ namespace UniversityProject.Data
     {
         public UniversityDbContext(DbContextOptions<UniversityDbContext> options) : base(options)
         {
-
         }
+
+        public DbSet<Course> Course { get; set; }
     }
 }
