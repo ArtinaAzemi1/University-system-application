@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 //import { setToken } from "../utils/auth";
 import "./../styles/Login.css";
+import { Link } from "react-router-dom";
 
 const Login = ({ setUser }) => {
   /*const [credentials, setCredentials] = useState({ username: "", password: "" });
@@ -48,6 +49,9 @@ const Login = ({ setUser }) => {
             <input type="password" name="password" /*value={credentials.password} onChange={handleChange}*/ required />
           </div>
           <button type="submit">Login</button>
+          <p>
+          Don't have an account? <Link to="/register">Register here</Link>
+          </p>
         </form>
       </div>
     </div>
