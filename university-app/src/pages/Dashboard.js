@@ -1,6 +1,7 @@
 // pages/Dashboard.js
 import React from "react";
 import Sidebar from "../pages/Sidebar";
+import FixedPlugin from "../pages/FixedPlugin";
 import "../styles/Dashboard.css";
 
 const Dashboard = (/*{ user }*/) => {

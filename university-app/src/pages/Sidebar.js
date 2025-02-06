@@ -2,6 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/Dashboard.css";
+import Course from "../components/Course";
 
 const Sidebar = () => {
   return (
@@ -11,6 +12,7 @@ const Sidebar = () => {
         <li><Link to="/dashboard">Dashboard</Link></li>
         <li><Link to="/students">Students</Link></li>
         <li><Link to="/professors">Professors</Link></li>
+        <li><Link to="/courses">Courses</Link></li>
         <li><button className="logout">Logout</button></li>
       </ul>
     </div>
