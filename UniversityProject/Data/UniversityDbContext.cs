@@ -11,5 +11,6 @@ namespace UniversityProject.Data
         }
 
         public DbSet<Course> Course { get; set; }
+        public DbSet<Grade> Grade { get; set; }
     }
 }
