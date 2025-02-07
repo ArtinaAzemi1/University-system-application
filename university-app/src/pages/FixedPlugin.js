@@ -142,8 +142,10 @@ import React, { useState } from "react";
 import { Button } from "reactstrap";
 import "../styles/FixedPlugin.css"; // Shto stilizimin
 
-function FixedPlugin() {
+function FixedPlugin({ handleBgClick, handleActiveClick }) {
   const [open, setOpen] = useState(false);
+  const [bgColor, setBgColor] = useState("black");
+  const [activeColor, setActiveColor] = useState("primary");
 
   return (
     <div className={`fixed-plugin-container ${open ? "open" : ""}`}>
@@ -156,17 +158,37 @@ function FixedPlugin() {
       <div className="fixed-plugin-panel">
         <h5>SIDEBAR BACKGROUND</h5>
         <div className="badge-colors">
-          <span className="badge filter badge-dark" data-color="black" />
-          <span className="badge filter badge-light" data-color="white" />
+          <span
+            className={`badge filter badge-dark ${bgColor === "black" ? "active" : ""}`}
+            data-color="black"
+            onClick={() => {
+              setBgColor("black");
+              handleBgClick("black");
+            }}
+          />
+          <span
+            className={`badge filter badge-light ${bgColor === "white" ? "active" : ""}`}
+            data-color="white"
+            onClick={() => {
+              setBgColor("white");
+              handleBgClick("white");
+            }}
+          />
         </div>
 
         <h5>SIDEBAR ACTIVE COLOR</h5>
         <div className="badge-colors">
-          <span className="badge filter badge-primary" data-color="primary" />
-          <span className="badge filter badge-info" data-color="info" />
-          <span className="badge filter badge-success" data-color="success" />
-          <span className="badge filter badge-warning" data-color="warning" />
-          <span className="badge filter badge-danger" data-color="danger" />
+          {["primary", "info", "success", "warning", "danger"].map((color) => (
+            <span
+              key={color}
+              className={`badge filter badge-${color} ${activeColor === color ? "active" : ""}`}
+              data-color={color}
+              onClick={() => {
+                setActiveColor(color);
+                handleActiveClick(color);
+              }}
+            />
+          ))}
         </div>
 
         <Button color="primary" block>

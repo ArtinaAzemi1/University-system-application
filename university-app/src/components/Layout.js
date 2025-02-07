@@ -15,14 +15,34 @@ const Layout = ({ children }) => {
 export default Layout;*/
 
 import React, { useState } from "react";
+import { Outlet, useLocation } from "react-router-dom"; 
+import Sidebar from "../pages/Sidebar";
+import Navbar from "../pages/Navbar"; // Import Navbar
 import FixedPlugin from "../pages/FixedPlugin";
+import "../styles/Layout.css";
 
-const Layout = ({ children }) => {
+const Layout = () => {
   const [showFixedPlugin, setShowFixedPlugin] = useState(false);
+  const location = useLocation();
+
+  // Fshij Navbar-in nga login/register
+  const hideNavbarRoutes = ["/login", "/register"];
+  const shouldShowNavbar = !hideNavbarRoutes.includes(location.pathname);
 
   return (
     <div className="layout">
-      {children}
+      <Sidebar />
+      {shouldShowNavbar && <Navbar />} 
+
+      <div className="main-wrapper">
+        {shouldShowNavbar && <Navbar />} 
+
+        {/* Përmbajtja në mes, poshtë Navbar-it */}
+        <div className="main-content">
+          <Outlet />
+        </div>
+      </div>
+
       {showFixedPlugin && <FixedPlugin />}
     </div>
   );

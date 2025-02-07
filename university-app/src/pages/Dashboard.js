@@ -1,13 +1,12 @@
 // pages/Dashboard.js
 import React from "react";
-import Sidebar from "../pages/Sidebar";
+import Sidebar from "./Sidebar";
 import FixedPlugin from "../pages/FixedPlugin";
 import "../styles/Dashboard.css";
 
 const Dashboard = (/*{ user }*/) => {
   return (
     <div className="dashboard-container">
-      <Sidebar />
       <div className="dashboard-content">
         <h1>Welcome, user</h1>
         <p>Role: user</p>
