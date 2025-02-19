@@ -17,7 +17,7 @@ export default Layout;*/
 import React, { useState } from "react";
 import { Outlet, useLocation } from "react-router-dom"; 
 import Sidebar from "../pages/Sidebar";
-import Navbar from "../pages/Navbar"; // Import Navbar
+//import Navbar from "./Navbar"; // Import Navbar
 import FixedPlugin from "../pages/FixedPlugin";
 import "../styles/Layout.css";
 
@@ -32,10 +32,8 @@ const Layout = () => {
   return (
     <div className="layout">
       <Sidebar />
-      {shouldShowNavbar && <Navbar />} 
 
       <div className="main-wrapper">
-        {shouldShowNavbar && <Navbar />} 
 
         {/* Përmbajtja në mes, poshtë Navbar-it */}
         <div className="main-content">

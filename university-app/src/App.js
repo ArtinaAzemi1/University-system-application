@@ -19,7 +19,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/courses" element={<Courses />} />
         </Route>
-        {/*<Route path="/dashboard" element={<Layout><Dashboard /></Layout>} />*/}
+        {/*<Route path="/dashboard" element={<Layout><Dashboard /></Layout>} />}
         {/*<Route path="/courses" element={<Layout><Courses /></Layout>} />*/}
       </Routes>
       <FixedPlugin/>
@@ -28,3 +28,5 @@ function App() {
 }
 
 export default App;
+
+

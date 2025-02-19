@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\Migrations\\20250206005019_GradeEntity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20250206005019_GradeEntity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|c:\\users\\gorenje\\desktop\\university-system\\universityproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|c:\\users\\gorenje\\desktop\\university-system\\universityproject\\data\\universitydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|solutionrelative:data\\universitydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|c:\\users\\gorenje\\desktop\\university-system\\universityproject\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|solutionrelative:controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|c:\\users\\gorenje\\desktop\\university-system\\universityproject\\models\\grade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|solutionrelative:models\\grade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|c:\\users\\gorenje\\desktop\\university-system\\universityproject\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|c:\\users\\gorenje\\desktop\\university-system\\universityproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|c:\\users\\gorenje\\desktop\\university-system\\universityproject\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,24 +27,28 @@
       "RelativeMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|solutionrelative:models\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\Migrations\\20250205102410_CourseTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20250205102410_CourseTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|c:\\users\\gorenje\\desktop\\university-system\\universityproject\\models\\grade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|solutionrelative:models\\grade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|c:\\users\\gorenje\\desktop\\university-system\\universityproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|c:\\users\\gorenje\\desktop\\university-system\\universityproject\\data\\universitydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|solutionrelative:data\\universitydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|c:\\users\\gorenje\\desktop\\university-system\\universityproject\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|c:\\users\\gorenje\\desktop\\university-system\\universityproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|c:\\users\\gorenje\\desktop\\university-system\\universityproject\\universityproject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|solutionrelative:universityproject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|c:\\users\\gorenje\\desktop\\university-system\\universityproject\\migrations\\20250206005019_gradeentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|solutionrelative:migrations\\20250206005019_gradeentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|c:\\users\\gorenje\\desktop\\university-system\\universityproject\\migrations\\20250205102410_coursetable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3EC9BE3-013C-4A87-A289-8F20536EF8B3}|UniversityProject.csproj|solutionrelative:migrations\\20250205102410_coursetable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,20 +74,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20250206005019_GradeEntity.cs",
-              "DocumentMoniker": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\Migrations\\20250206005019_GradeEntity.cs",
-              "RelativeDocumentMoniker": "Migrations\\20250206005019_GradeEntity.cs",
-              "ToolTip": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\Migrations\\20250206005019_GradeEntity.cs",
-              "RelativeToolTip": "Migrations\\20250206005019_GradeEntity.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T00:50:19.785Z",
-              "EditorCaption": ""
+              "DocumentIndex": 2,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-06T10:44:39.158Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "CourseController.cs",
+              "DocumentMoniker": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\Controllers\\CourseController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CourseController.cs",
+              "ToolTip": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\Controllers\\CourseController.cs",
+              "RelativeToolTip": "Controllers\\CourseController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T00:56:54.027Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Grade.cs",
               "DocumentMoniker": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\Models\\Grade.cs",
               "RelativeDocumentMoniker": "Models\\Grade.cs",
@@ -87,51 +106,60 @@
               "RelativeToolTip": "Models\\Grade.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T20:05:06.551Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-05T20:05:06.551Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Department.cs",
               "DocumentMoniker": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\Models\\Department.cs",
               "RelativeDocumentMoniker": "Models\\Department.cs",
               "ToolTip": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\Models\\Department.cs",
               "RelativeToolTip": "Models\\Department.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAA/wAcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T18:23:24.634Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-05T18:23:24.634Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "20250205102410_CourseTable.cs",
-              "DocumentMoniker": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\Migrations\\20250205102410_CourseTable.cs",
-              "RelativeDocumentMoniker": "Migrations\\20250205102410_CourseTable.cs",
-              "ToolTip": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\Migrations\\20250205102410_CourseTable.cs",
-              "RelativeToolTip": "Migrations\\20250205102410_CourseTable.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T10:24:11.177Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Course.cs",
               "DocumentMoniker": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\Models\\Course.cs",
               "RelativeDocumentMoniker": "Models\\Course.cs",
               "ToolTip": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\Models\\Course.cs",
               "RelativeToolTip": "Models\\Course.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAA1wAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T09:32:19.197Z",
+              "WhenOpened": "2025-02-05T09:32:19.197Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-31T20:08:30.83Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
+              "Title": "20250206005019_GradeEntity.cs",
+              "DocumentMoniker": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\Migrations\\20250206005019_GradeEntity.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250206005019_GradeEntity.cs",
+              "ToolTip": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\Migrations\\20250206005019_GradeEntity.cs",
+              "RelativeToolTip": "Migrations\\20250206005019_GradeEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T00:50:19.785Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -139,12 +167,23 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-05T09:29:34.102Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-05T09:29:34.102Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 11,
+              "Title": "20250205102410_CourseTable.cs",
+              "DocumentMoniker": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\Migrations\\20250205102410_CourseTable.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250205102410_CourseTable.cs",
+              "ToolTip": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\Migrations\\20250205102410_CourseTable.cs",
+              "RelativeToolTip": "Migrations\\20250205102410_CourseTable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-05T10:24:11.177Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "UniversityDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\Data\\UniversityDbContext.cs",
               "RelativeDocumentMoniker": "Data\\UniversityDbContext.cs",
@@ -152,12 +191,11 @@
               "RelativeToolTip": "Data\\UniversityDbContext.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAkwA0AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T03:10:49.385Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-05T03:10:49.385Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
@@ -165,34 +203,19 @@
               "RelativeToolTip": "Controllers\\AuthController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T03:10:48.319Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-05T03:10:48.319Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "UniversityProject",
+              "Title": "UniversityProject.csproj",
               "DocumentMoniker": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\UniversityProject.csproj",
               "RelativeDocumentMoniker": "UniversityProject.csproj",
               "ToolTip": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\UniversityProject.csproj",
               "RelativeToolTip": "UniversityProject.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-02-05T03:10:46.895Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Gorenje\\Desktop\\University-system\\UniversityProject\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T20:08:30.83Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-05T03:10:46.895Z"
             }
           ]
         }
