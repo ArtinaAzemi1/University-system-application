@@ -7,6 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import Courses from "./components/Courses";
 import Layout from "./components/Layout";
 import FixedPlugin from "./pages/FixedPlugin";
+import Sidebar from "./pages/Sidebar";
 
 function App() {
   return (

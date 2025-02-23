@@ -33,13 +33,9 @@ const Layout = () => {
     <div className="layout">
       <Sidebar />
 
-      <div className="main-wrapper">
-
-        {/* Përmbajtja në mes, poshtë Navbar-it */}
         <div className="main-content">
           <Outlet />
         </div>
-      </div>
 
       {showFixedPlugin && <FixedPlugin />}
     </div>

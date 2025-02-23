@@ -38,7 +38,7 @@ const Sidebar = () => {
 
 export default Sidebar;*/
 
-import { useState } from "react";
+/*import { useState } from "react";
 import { ProSidebarProvider, Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
@@ -81,7 +81,7 @@ const SidebarPro = () => {
       >
         <Sidebar collapsed={isCollapsed}>
           <Menu>
-            {/* LOGO AND MENU ICON */}
+
             <MenuItem
               onClick={() => setIsCollapsed(!isCollapsed)}
               icon={isCollapsed ? <FaBars /> : undefined}
@@ -152,4 +152,4 @@ const SidebarPro = () => {
   );
 };
 
-export default SidebarPro;
+export default SidebarPro;*/
