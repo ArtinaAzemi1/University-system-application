@@ -1,4 +1,6 @@
-﻿namespace UniversityProject.Models
+﻿using System.Text.Json.Serialization;
+
+namespace UniversityProject.Models
 {
     public class Location
     { 
@@ -7,5 +9,7 @@
         public string Address { get; set; }
 
         public string City { get; set; }
+
+        
     }
 }
