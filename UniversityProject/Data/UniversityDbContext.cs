@@ -25,5 +25,34 @@ namespace UniversityProject.Data
         public DbSet<Student> Student { get; set; }
 
         public DbSet<User> User { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            builder.Entity<IdentityRole>().HasData(
+                new IdentityRole
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Name = "Admin",
+                    NormalizedName = "ADMIN",
+                    ConcurrencyStamp = Guid.NewGuid().ToString()
+                },
+                new IdentityRole
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Name = "Professor",
+                    NormalizedName = "PROFESSOR",
+                    ConcurrencyStamp = Guid.NewGuid().ToString()
+                },
+                new IdentityRole
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Name = "Student",
+                    NormalizedName = "STUDENT",
+                    ConcurrencyStamp = Guid.NewGuid().ToString()
+                }
+            );
+        }
     }
 }
