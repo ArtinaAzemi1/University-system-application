@@ -149,6 +149,47 @@ namespace UniversityProject.Controllers
             });
         }
 
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        [Route("addUserRole")]
+        public async Task<IActionResult> PrditesoAkses(string userID, string roli)
+        {
+            var user = await _userManager.FindByIdAsync(userID);
+
+            if (user == null)
+            {
+                return BadRequest(new AuthVariables
+                {
+                    Errors = new List<string> { "User does not exist!" }
+                });
+            }
+
+            var perditesoAkses = await _userManager.AddToRoleAsync(user, roli);
+
+            if (perditesoAkses.Succeeded)
+            {
+
+                return Ok(new AuthVariables
+                {
+                    Result = true
+                });
+            }
+            else if (await _userManager.IsInRoleAsync(user, roli))
+            {
+                return BadRequest(new AuthVariables
+                {
+                    Errors = new List<string> { "This User has this role!!" }
+                });
+            }
+            else
+            {
+                return BadRequest(new AuthVariables
+                {
+                    Errors = new List<string> { "Thre's been a mistake while  updating the access" }
+                });
+            }
+        }
+
         private string GenerateJwtToken(IdentityUser user, IList<string> roles)
         {
             var jwtTokenHandler = new JwtSecurityTokenHandler();

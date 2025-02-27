@@ -23,5 +23,7 @@ namespace UniversityProject.Data
 
         public DbSet<Professor> Professor { get; set; }
         public DbSet<Student> Student { get; set; }
+
+        public DbSet<User> User { get; set; }
     }
 }
