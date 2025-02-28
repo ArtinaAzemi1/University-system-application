@@ -8,6 +8,7 @@ using UniversityProject.Models.Auth;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using UniversityProject.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -61,6 +62,12 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>()
         .AddDefaultTokenProviders();
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    await SeedData.Initialize(scope.ServiceProvider, roleManager);
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

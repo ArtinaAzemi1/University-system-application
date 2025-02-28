@@ -13,8 +13,8 @@ namespace UniversityProject.Models
 
         public string? Gender { get; set; }
 
-        public int UserId { get; set; }
-        [ForeignKey("UserId")]
-        public User User { get; set; }
+        public string? AspNetUserId { get; set; }
+        [ForeignKey("AspNetUserId")]
+        public IdentityUser AspNetUser { get; set; }
     }
 }

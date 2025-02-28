@@ -269,7 +269,7 @@ namespace UniversityProject.Migrations
 
                     b.HasKey("CourseId");
 
-                    b.ToTable("Course");
+                    b.ToTable("Course", (string)null);
                 });
 
             modelBuilder.Entity("UniversityProject.Models.Grade", b =>
@@ -293,7 +293,7 @@ namespace UniversityProject.Migrations
 
                     b.HasKey("GradeId");
 
-                    b.ToTable("Grade");
+                    b.ToTable("Grade", (string)null);
                 });
 
             modelBuilder.Entity("UniversityProject.Models.Hall", b =>
@@ -320,7 +320,7 @@ namespace UniversityProject.Migrations
 
                     b.HasIndex("LocationID");
 
-                    b.ToTable("Hall");
+                    b.ToTable("Hall", (string)null);
                 });
 
             modelBuilder.Entity("UniversityProject.Models.Location", b =>
@@ -341,7 +341,7 @@ namespace UniversityProject.Migrations
 
                     b.HasKey("LocationId");
 
-                    b.ToTable("Location");
+                    b.ToTable("Location", (string)null);
                 });
 
             modelBuilder.Entity("UniversityProject.Models.Professor", b =>
@@ -365,7 +365,7 @@ namespace UniversityProject.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Professor");
+                    b.ToTable("Professor", (string)null);
                 });
 
             modelBuilder.Entity("UniversityProject.Models.Student", b =>
@@ -392,7 +392,7 @@ namespace UniversityProject.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Student");
+                    b.ToTable("Student", (string)null);
                 });
 
             modelBuilder.Entity("UniversityProject.Models.User", b =>
@@ -416,7 +416,7 @@ namespace UniversityProject.Migrations
 
                     b.HasIndex("AspNetUserId");
 
-                    b.ToTable("User");
+                    b.ToTable("User", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

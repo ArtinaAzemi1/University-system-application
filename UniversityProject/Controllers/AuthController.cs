@@ -33,7 +33,7 @@ namespace UniversityProject.Controllers
             _context = context;
         }
 
-        [AllowAnonymous]
+        /*[AllowAnonymous]
         [HttpPost]
         [Route("register")]
         public async Task<IActionResult> Register([FromBody] Register registerModel)
@@ -91,7 +91,7 @@ namespace UniversityProject.Controllers
 
             }
             return BadRequest();
-        }
+        }*/
 
         [AllowAnonymous]
         [HttpPost]
