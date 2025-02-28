@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UniversityProject.Data;
 
@@ -11,9 +12,11 @@ using UniversityProject.Data;
 namespace UniversityProject.Migrations
 {
     [DbContext(typeof(UniversityDbContext))]
-    partial class UniversityDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250228085641_MStudentProfessorChanges")]
+    partial class MStudentProfessorChanges
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,29 +50,6 @@ namespace UniversityProject.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "935cc9b2-5aea-4a11-963a-cfba4eaa9904",
-                            ConcurrencyStamp = "ed3b35f5-e7aa-4ceb-8965-0c2b2ad3ac2d",
-                            Name = "Admin",
-                            NormalizedName = "ADMIN"
-                        },
-                        new
-                        {
-                            Id = "0a9416d5-f735-4d18-a207-f654766762d1",
-                            ConcurrencyStamp = "492a1e60-6f4c-4f36-9ed7-831e66ee0cac",
-                            Name = "Professor",
-                            NormalizedName = "PROFESSOR"
-                        },
-                        new
-                        {
-                            Id = "235cceee-e714-4fd1-83f5-881d49c27022",
-                            ConcurrencyStamp = "7a2e5728-45f0-48ca-87dc-8af19089aeea",
-                            Name = "Student",
-                            NormalizedName = "STUDENT"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
