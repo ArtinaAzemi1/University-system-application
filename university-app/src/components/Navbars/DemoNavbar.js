@@ -36,10 +36,41 @@ import {
   Input,
 } from "reactstrap";
 //import Login from "../../auth/Login.js";
+import { useNavigate } from 'react-router-dom';
 
 import routes from "routes.js";
 
 function Header(props) {
+
+  const navigate = useNavigate();
+  const token = localStorage.getItem("token");
+
+  const getToken = localStorage.getItem("token");
+
+  const authentikimi = {
+    headers: {
+      Authorization: `Bearer ${getToken}`,
+    },
+  };
+
+  useEffect(() => {
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      const kohaAktive = new Date(decodedToken.exp * 1000);
+      const kohaTanishme = new Date();
+      const id = localStorage.getItem("id");
+  
+      if (kohaAktive < kohaTanishme || id !== decodedToken.id) {
+        handleSignOut(); // Thirr handleSignOut direkt
+      }
+    }
+  }, [token]);
+
+  const handleSignOut = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("id");
+  }
+
   const [isOpen, setIsOpen] = React.useState(false);
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
   const [color, setColor] = React.useState("transparent");
@@ -161,7 +192,9 @@ function Header(props) {
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem tag={Link} to="/" style={{paddingBottom: "-25px"}}><i className="nc-icon nc-single-02" style={{paddingRight: "5px"}}></i> My Profile</DropdownItem>
-                <DropdownItem tag={Link} to="/" style={{paddingBottom: "-25px"}}><i className="nc-icon nc-button-power" style={{paddingRight: "5px"}}></i> Log out</DropdownItem>
+                {token &&
+                <DropdownItem tag={Link} to="/" onClick={handleSignOut} style={{paddingBottom: "-25px"}}><i className="nc-icon nc-button-power" style={{paddingRight: "5px"}}></i> Log out</DropdownItem>
+                }
               </DropdownMenu>
             </Dropdown>
             </NavItem>

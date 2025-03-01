@@ -7,6 +7,7 @@ import {Button} from 'react-bootstrap';
 import axios from "axios";
 import * as jwt_decode from 'jwt-decode';
 import { MDBInput } from "mdb-react-ui-kit";
+import Admin from '../layouts/Admin'
 
 const Login = () => {
 

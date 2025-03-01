@@ -118,7 +118,7 @@ const ShtoHall = (props) => {
     const requestData = {
       hallCapacity: hallCapacity,
     hallCode: hallCode,
-    locationId: locationId,  // Sigurohuni që locationId është i vlefshëm
+    locationId: Number(locationId),  // Sigurohuni që locationId është i vlefshëm
     type: type
     };
     console.log("Submitting  with locationId:", locationId);

@@ -20,6 +20,8 @@ const Hall = () => {
 
   const [search, setSearch] = useState ('');
 
+  const [fshij, setFshij] = useState('');
+
   const [shto, setShto] = useState(false);
   const [refreshD, setRefreshD] = useState("");
   const handleShow = () => setShto(true);
@@ -43,12 +45,23 @@ const Hall = () => {
     setIsEditHallOpen(!isEditHallOpen);
   };
 
-  const deleteHall = async (id) => {
-    if (window.confirm("Are you sure you want to delete this hall?")) {
-        await axios.delete(`http://localhost:5000/api/Hall/${id}`);
-        fetchHalls(); // Refresh data
+  const handleDelete = (locationId) => {
+    setFshij(true);
+    setLocationId(locationId);
+  };
+
+  const handleDeleteHall = async (hallId) => {
+    console.log("Deleting location with ID:", hallId); 
+    try {
+      await axios.delete(`https://localhost:7028/api/Hall/${hallId}`).then(() => {
+        setFshij(false);
+        setHalls((prevHalls) => prevHalls.filter(h => h.hallId !== hallId));
+        toast.success('Hall deleted succesfully!')
+      })
+    } catch (e) {
+        toast.error('Failed to delete this hall.');
     }
-};
+  };
 
   const tableStyle = {
     overflowX: 'auto',
@@ -62,6 +75,24 @@ const Hall = () => {
 
   return (
     <div className='content'>
+        {fshij && (
+            <Modal show={fshij} onHide={() => setFshij(false)}>
+              <Modal.Header closeButton>
+                <Modal.Title style={{ color: "red" }}>Delete Hall</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <h6>Are you sure you want to delete this Hall?</h6>
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={() => setFshij(false)}>
+                  Cancel
+                </Button>
+                <Button variant="danger" onClick={() => handleDeleteHall(hallId)}>
+                  Delete Hall
+                </Button>
+              </Modal.Footer>
+            </Modal>
+        )}
       <Row>
 <Col md="12">
   <Card>
