@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace UniversityProject.Models
 {
@@ -12,9 +13,9 @@ namespace UniversityProject.Models
 
         public int? HallCapacity { get; set; }
 
-        public int? LocationID { get; set; }
 
-        
-        public Location Location { get; set; }
+        [Required]
+        public int LocationId { get; set; }       
+        public virtual Location Location { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UniversityProject.Data;
 
@@ -11,9 +12,11 @@ using UniversityProject.Data;
 namespace UniversityProject.Migrations
 {
     [DbContext(typeof(UniversityDbContext))]
-    partial class UniversityDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250301072728_LocHall")]
+    partial class LocHall
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -273,31 +276,6 @@ namespace UniversityProject.Migrations
                     b.ToTable("Grade");
                 });
 
-            modelBuilder.Entity("UniversityProject.Models.Group", b =>
-                {
-                    b.Property<int>("GroupId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GroupId"));
-
-                    b.Property<int>("Capacity")
-                        .HasColumnType("int");
-
-                    b.Property<string>("GroupName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ScheduleId")
-                        .HasColumnType("int");
-
-                    b.HasKey("GroupId");
-
-                    b.HasIndex("ScheduleId");
-
-                    b.ToTable("Groups");
-                });
-
             modelBuilder.Entity("UniversityProject.Models.Hall", b =>
                 {
                     b.Property<int>("HallID")
@@ -312,7 +290,7 @@ namespace UniversityProject.Migrations
                     b.Property<string>("HallCode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("LocationId")
+                    b.Property<int?>("LocationID")
                         .HasColumnType("int");
 
                     b.Property<string>("Type")
@@ -320,7 +298,7 @@ namespace UniversityProject.Migrations
 
                     b.HasKey("HallID");
 
-                    b.HasIndex("LocationId");
+                    b.HasIndex("LocationID");
 
                     b.ToTable("Hall");
                 });
@@ -362,33 +340,6 @@ namespace UniversityProject.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Professor");
-                });
-
-            modelBuilder.Entity("UniversityProject.Models.Schedule", b =>
-                {
-                    b.Property<int>("ScheduleID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ScheduleID"));
-
-                    b.Property<string>("Day")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<TimeOnly>("EndTime")
-                        .HasColumnType("time");
-
-                    b.Property<string>("Shift")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<TimeOnly>("StartTime")
-                        .HasColumnType("time");
-
-                    b.HasKey("ScheduleID");
-
-                    b.ToTable("Schedules");
                 });
 
             modelBuilder.Entity("UniversityProject.Models.Student", b =>
@@ -493,24 +444,11 @@ namespace UniversityProject.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("UniversityProject.Models.Group", b =>
-                {
-                    b.HasOne("UniversityProject.Models.Schedule", "Schedule")
-                        .WithMany("Group")
-                        .HasForeignKey("ScheduleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Schedule");
-                });
-
             modelBuilder.Entity("UniversityProject.Models.Hall", b =>
                 {
                     b.HasOne("UniversityProject.Models.Location", "Location")
                         .WithMany("Hall")
-                        .HasForeignKey("LocationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("LocationID");
 
                     b.Navigation("Location");
                 });
@@ -545,11 +483,6 @@ namespace UniversityProject.Migrations
             modelBuilder.Entity("UniversityProject.Models.Location", b =>
                 {
                     b.Navigation("Hall");
-                });
-
-            modelBuilder.Entity("UniversityProject.Models.Schedule", b =>
-                {
-                    b.Navigation("Group");
                 });
 #pragma warning restore 612, 618
         }

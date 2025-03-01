@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UniversityProject.Data;
 
@@ -11,9 +12,11 @@ using UniversityProject.Data;
 namespace UniversityProject.Migrations
 {
     [DbContext(typeof(UniversityDbContext))]
-    partial class UniversityDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250228142306_rolett")]
+    partial class rolett
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,6 +50,29 @@ namespace UniversityProject.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "6a708edf-0fd5-4cad-afb4-789fdbeb1f68",
+                            ConcurrencyStamp = "4a1ed6a6-2fff-46fa-b92a-183f77536dae",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "4b969c4f-15cc-47ba-9380-d865698751ff",
+                            ConcurrencyStamp = "4aa41ba9-9f6b-4468-88e2-33d184846db2",
+                            Name = "Professor",
+                            NormalizedName = "PROFESSOR"
+                        },
+                        new
+                        {
+                            Id = "8fa0ee66-5d0f-4351-a933-1187dedac999",
+                            ConcurrencyStamp = "7345fbcf-4019-47fd-b86a-cc794e84e9e2",
+                            Name = "Student",
+                            NormalizedName = "STUDENT"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -273,31 +299,6 @@ namespace UniversityProject.Migrations
                     b.ToTable("Grade");
                 });
 
-            modelBuilder.Entity("UniversityProject.Models.Group", b =>
-                {
-                    b.Property<int>("GroupId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GroupId"));
-
-                    b.Property<int>("Capacity")
-                        .HasColumnType("int");
-
-                    b.Property<string>("GroupName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ScheduleId")
-                        .HasColumnType("int");
-
-                    b.HasKey("GroupId");
-
-                    b.HasIndex("ScheduleId");
-
-                    b.ToTable("Groups");
-                });
-
             modelBuilder.Entity("UniversityProject.Models.Hall", b =>
                 {
                     b.Property<int>("HallID")
@@ -312,7 +313,7 @@ namespace UniversityProject.Migrations
                     b.Property<string>("HallCode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("LocationId")
+                    b.Property<int?>("LocationID")
                         .HasColumnType("int");
 
                     b.Property<string>("Type")
@@ -320,7 +321,7 @@ namespace UniversityProject.Migrations
 
                     b.HasKey("HallID");
 
-                    b.HasIndex("LocationId");
+                    b.HasIndex("LocationID");
 
                     b.ToTable("Hall");
                 });
@@ -362,33 +363,6 @@ namespace UniversityProject.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Professor");
-                });
-
-            modelBuilder.Entity("UniversityProject.Models.Schedule", b =>
-                {
-                    b.Property<int>("ScheduleID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ScheduleID"));
-
-                    b.Property<string>("Day")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<TimeOnly>("EndTime")
-                        .HasColumnType("time");
-
-                    b.Property<string>("Shift")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<TimeOnly>("StartTime")
-                        .HasColumnType("time");
-
-                    b.HasKey("ScheduleID");
-
-                    b.ToTable("Schedules");
                 });
 
             modelBuilder.Entity("UniversityProject.Models.Student", b =>
@@ -493,24 +467,11 @@ namespace UniversityProject.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("UniversityProject.Models.Group", b =>
-                {
-                    b.HasOne("UniversityProject.Models.Schedule", "Schedule")
-                        .WithMany("Group")
-                        .HasForeignKey("ScheduleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Schedule");
-                });
-
             modelBuilder.Entity("UniversityProject.Models.Hall", b =>
                 {
                     b.HasOne("UniversityProject.Models.Location", "Location")
-                        .WithMany("Hall")
-                        .HasForeignKey("LocationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany()
+                        .HasForeignKey("LocationID");
 
                     b.Navigation("Location");
                 });
@@ -540,16 +501,6 @@ namespace UniversityProject.Migrations
                         .HasForeignKey("AspNetUserId");
 
                     b.Navigation("AspNetUser");
-                });
-
-            modelBuilder.Entity("UniversityProject.Models.Location", b =>
-                {
-                    b.Navigation("Hall");
-                });
-
-            modelBuilder.Entity("UniversityProject.Models.Schedule", b =>
-                {
-                    b.Navigation("Group");
                 });
 #pragma warning restore 612, 618
         }

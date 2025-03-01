@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Collections;
+using System.Text.Json.Serialization;
 
 namespace UniversityProject.Models
 {
@@ -10,6 +11,6 @@ namespace UniversityProject.Models
 
         public string City { get; set; }
 
-        
+        public ICollection<Hall>? Hall { get; set; }
     }
 }

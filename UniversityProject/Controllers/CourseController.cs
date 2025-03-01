@@ -76,5 +76,27 @@ namespace UniversityProject.Controllers
 
             return NoContent();
         }
+
+        [HttpGet]
+        [Route("totalCourses")]
+        public async Task<IActionResult> GetTotalCourses()
+        {
+            try
+            {
+                var totalCourses = await _context.Course.CountAsync();
+
+                var total = new
+                {
+                    TotalCourses = totalCourses
+                };
+
+                return Ok(total);
+            }
+            catch (Exception ex)
+            {
+                // Handle errors (e.g., log and return a server error)
+                return StatusCode(500, "Internal server error");
+            }
+        }
     }
 }

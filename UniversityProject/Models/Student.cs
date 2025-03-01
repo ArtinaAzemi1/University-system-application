@@ -7,14 +7,10 @@ namespace UniversityProject.Models
     {
         public int StudentId { get; set; }
 
-        public string? StudentName { get; set; }
-
-        public string? StudentSurname {get; set;}
-
         public string? Gender { get; set; }
 
-        public string? AspNetUserId { get; set; }
-        [ForeignKey("AspNetUserId")]
-        public IdentityUser AspNetUser { get; set; }
+        public int? UserId { get; set; }
+        [ForeignKey("UserId")]
+        public User User { get; set; }
     }
 }

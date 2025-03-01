@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UniversityProject.Data;
 
@@ -11,9 +12,11 @@ using UniversityProject.Data;
 namespace UniversityProject.Migrations
 {
     [DbContext(typeof(UniversityDbContext))]
-    partial class UniversityDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250301084313_SchduleGroup")]
+    partial class SchduleGroup
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,6 +24,21 @@ namespace UniversityProject.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("HallLocation", b =>
+                {
+                    b.Property<int>("HallID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("LocationId")
+                        .HasColumnType("int");
+
+                    b.HasKey("HallID", "LocationId");
+
+                    b.HasIndex("LocationId");
+
+                    b.ToTable("HallLocation");
+                });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
@@ -47,6 +65,29 @@ namespace UniversityProject.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "5868b1ad-8785-4029-8187-1199b4d22bb1",
+                            ConcurrencyStamp = "56a2b9ce-5107-4469-a195-11fef148ab60",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "903fd297-a3fb-464f-af3e-89720abc335f",
+                            ConcurrencyStamp = "c6f6b724-285c-4550-827e-fb60ce6a4982",
+                            Name = "Professor",
+                            NormalizedName = "PROFESSOR"
+                        },
+                        new
+                        {
+                            Id = "bedb63e6-2c7d-4bec-adb8-7e47d8653479",
+                            ConcurrencyStamp = "1f629fa7-38ac-4332-addb-8f43a9bb8b3a",
+                            Name = "Student",
+                            NormalizedName = "STUDENT"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -288,14 +329,14 @@ namespace UniversityProject.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ScheduleId")
+                    b.Property<int?>("ScheduleId")
                         .HasColumnType("int");
 
                     b.HasKey("GroupId");
 
                     b.HasIndex("ScheduleId");
 
-                    b.ToTable("Groups");
+                    b.ToTable("Group");
                 });
 
             modelBuilder.Entity("UniversityProject.Models.Hall", b =>
@@ -312,15 +353,13 @@ namespace UniversityProject.Migrations
                     b.Property<string>("HallCode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("LocationId")
+                    b.Property<int?>("LocationID")
                         .HasColumnType("int");
 
                     b.Property<string>("Type")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("HallID");
-
-                    b.HasIndex("LocationId");
 
                     b.ToTable("Hall");
                 });
@@ -388,7 +427,7 @@ namespace UniversityProject.Migrations
 
                     b.HasKey("ScheduleID");
 
-                    b.ToTable("Schedules");
+                    b.ToTable("Schedule");
                 });
 
             modelBuilder.Entity("UniversityProject.Models.Student", b =>
@@ -440,6 +479,21 @@ namespace UniversityProject.Migrations
                     b.HasIndex("AspNetUserId");
 
                     b.ToTable("User");
+                });
+
+            modelBuilder.Entity("HallLocation", b =>
+                {
+                    b.HasOne("UniversityProject.Models.Hall", null)
+                        .WithMany()
+                        .HasForeignKey("HallID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("UniversityProject.Models.Location", null)
+                        .WithMany()
+                        .HasForeignKey("LocationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -497,22 +551,9 @@ namespace UniversityProject.Migrations
                 {
                     b.HasOne("UniversityProject.Models.Schedule", "Schedule")
                         .WithMany("Group")
-                        .HasForeignKey("ScheduleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ScheduleId");
 
                     b.Navigation("Schedule");
-                });
-
-            modelBuilder.Entity("UniversityProject.Models.Hall", b =>
-                {
-                    b.HasOne("UniversityProject.Models.Location", "Location")
-                        .WithMany("Hall")
-                        .HasForeignKey("LocationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Location");
                 });
 
             modelBuilder.Entity("UniversityProject.Models.Professor", b =>
@@ -540,11 +581,6 @@ namespace UniversityProject.Migrations
                         .HasForeignKey("AspNetUserId");
 
                     b.Navigation("AspNetUser");
-                });
-
-            modelBuilder.Entity("UniversityProject.Models.Location", b =>
-                {
-                    b.Navigation("Hall");
                 });
 
             modelBuilder.Entity("UniversityProject.Models.Schedule", b =>

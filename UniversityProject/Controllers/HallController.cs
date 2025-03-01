@@ -58,7 +58,7 @@ namespace UniversityProject.Controllers
                 x.HallCode,
                 x.Type,
                 x.HallCapacity,
-                x.LocationID
+                x.LocationId
             }).FirstOrDefaultAsync();
             if (hall == null)
             {
@@ -73,6 +73,11 @@ namespace UniversityProject.Controllers
         {
             if (!ModelState.IsValid)
             {
+                Console.WriteLine("Validation Errors:");
+                foreach (var error in ModelState)
+                {
+                    Console.WriteLine($"{error.Key}: {string.Join(",", error.Value.Errors.Select(e => e.ErrorMessage))}");
+                }
                 return BadRequest(ModelState);
             }
 

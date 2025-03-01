@@ -7,12 +7,8 @@ namespace UniversityProject.Models
     {
         public int ProfessorId { get; set; }
 
-        public string? ProfessorName { get; set; }
-
-        public string? ProfessorSurname { get; set; }
-
-        public string? AspNetUserId { get; set; }
-        [ForeignKey("AspNetUserId")]
-        public IdentityUser AspNetUser { get; set; }
+        public int? UserId { get; set; }
+        [ForeignKey("UserId")]
+        public User User { get; set; }
     }
 }

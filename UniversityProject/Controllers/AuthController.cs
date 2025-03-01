@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿/*using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -40,6 +40,74 @@ namespace UniversityProject.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Kontrollo nëse përdoruesi ekziston me këtë email
+                var existingUser = await _userManager.FindByEmailAsync(registerModel.Email);
+                if (existingUser != null)
+                {
+                    return BadRequest(new { Message = "Email already exists" });
+                }
+
+                // Krijo një përdorues të ri me email dhe username
+                var newUser = new ApplicationUser
+                {
+                    UserName = registerModel.Username,
+                    Email = registerModel.Email
+                };
+
+                // Krijo përdoruesin me fjalëkalim
+                var createResult = await _userManager.CreateAsync(newUser, registerModel.Password);
+                if (!createResult.Succeeded)
+                {
+                    return BadRequest(new { Message = "Error creating user" });
+                }
+
+                // Shto rol (nëse nuk ekziston)
+                string role = "Professor"; // Mund të ndërroni këtë bazuar në rolin që do t'i jepni
+                var roleExist = await _roleManager.RoleExistsAsync(role);
+                if (!roleExist)
+                {
+                    await _roleManager.CreateAsync(new IdentityRole(role));
+                }
+
+                await _userManager.AddToRoleAsync(newUser, role);
+
+                // Krijo student ose profesor sipas rolit
+                if (role == "Professor")
+                {
+                    var professor = new Professor
+                    {
+                        ProfessorName = registerModel.Username, // Mund të përdorësh një fushë të veçantë për emrin dhe mbiemrin
+                        AspNetUserId = newUser.Id
+                    };
+
+                    _context.Professor.Add(professor); // Ruaj studentin në databazë
+                }
+                else if (role == "Student")
+                {
+                    var student = new Student
+                    {
+                        StudentName = registerModel.Username, // Mund të përdorësh një fushë të veçantë për emrin dhe mbiemrin
+                        AspNetUserId = newUser.Id
+                    };
+
+                    _context.Student.Add(student); // Ruaj profesorin në databazë
+                }
+
+                await _context.SaveChangesAsync();
+
+                return Ok(new { Message = "User created successfully" });
+            }
+
+            return BadRequest(new { Message = "Invalid model state" });
+        }*/
+
+        /*[AllowAnonymous]
+        [HttpPost]
+        [Route("register")]
+        public async Task<IActionResult> Register([FromBody] Register registerModel)
+        {
+            if (ModelState.IsValid)
+            {
                 var perdoruesiEkziston = await _userManager.FindByEmailAsync(registerModel.Email);
 
                 if (perdoruesiEkziston != null)
@@ -69,11 +137,14 @@ namespace UniversityProject.Controllers
                     User perdoruesi = new User
                     {
                         AspNetUserId = perdoruesiIRI.Id,
+                        Name = registerModel.Name,
                         Username = perdoruesiIRI.UserName,
-                        Email = perdoruesiIRI.Email
+                        Email = perdoruesiIRI.Email,
+                        Surname = registerModel.LastName,
                     };
                     await _context.User.AddAsync(perdoruesi);
                     await _context.SaveChangesAsync();
+
 
                     return Ok(new AuthVariables()
                     {
@@ -91,7 +162,7 @@ namespace UniversityProject.Controllers
 
             }
             return BadRequest();
-        }*/
+        }
 
         [AllowAnonymous]
         [HttpPost]
@@ -147,6 +218,24 @@ namespace UniversityProject.Controllers
                     "Inavlid Payload"
                 }
             });
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("ControlEmail")]
+        public async Task<IActionResult> ControlEmail(string email)
+        {
+            var perdoruesi = await _userManager.FindByEmailAsync(email);
+
+            var emailIPerdorur = false;
+
+            if (perdoruesi != null)
+            {
+                emailIPerdorur = true;
+            }
+
+
+            return Ok(emailIPerdorur);
         }
 
         [Authorize(Roles = "Admin")]
@@ -226,4 +315,4 @@ namespace UniversityProject.Controllers
 
 
     }
-}
+}*/

@@ -101,11 +101,26 @@ builder.Services.AddSwaggerGen(c => {
 
 var app = builder.Build();
 
-using (var scope = app.Services.CreateScope())
+var scope = app.Services.CreateScope();
+var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+
+string[] roleNames = { "Admin", "User", "Professor" };
+
+foreach (var roleName in roleNames)
+{
+    var roleExist = await roleManager.RoleExistsAsync(roleName);
+    if (!roleExist)
+    {
+        var role = new IdentityRole(roleName);
+        await roleManager.CreateAsync(role);
+    }
+}
+
+/*using (var scope = app.Services.CreateScope())
 {
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
     await SeedData.Initialize(scope.ServiceProvider, roleManager);
-}
+}*/
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
