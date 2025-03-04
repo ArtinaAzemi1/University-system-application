@@ -7,15 +7,14 @@ namespace UniversityProject.Models
     {
         public int HallID { get; set; }
 
-        public string? HallCode { get; set; }
+        public string HallCode { get; set; }
 
-        public string? Type { get; set; }
+        public string Type { get; set; }
 
-        public int? HallCapacity { get; set; }
+        public string HallCapacity { get; set; }
 
+        public int LocationId { get; set; }
 
-        [Required]
-        public int LocationId { get; set; }       
         public virtual Location Location { get; set; }
     }
 }

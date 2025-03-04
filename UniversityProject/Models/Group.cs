@@ -6,7 +6,7 @@ namespace UniversityProject.Models
     {
         public int GroupId { get; set; }
         public string GroupName { get; set; }
-        public int Capacity { get; set; }
+        public string Capacity { get; set; }
 
         public int ScheduleId { get; set; }
         [ForeignKey(nameof(ScheduleId))]

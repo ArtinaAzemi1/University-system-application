@@ -14,7 +14,7 @@ namespace UniversityProject.Models
 
         public string Shift { get; set; }
 
-        public virtual List<Group>? Group { get; set; }
+        public virtual List<Group> Group { get; set; }
 
     }
 }

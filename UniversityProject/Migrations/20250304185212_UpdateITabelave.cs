@@ -5,7 +5,7 @@
 namespace UniversityProject.Migrations
 {
     /// <inheritdoc />
-    public partial class OraretGrupett : Migration
+    public partial class UpdateITabelave : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

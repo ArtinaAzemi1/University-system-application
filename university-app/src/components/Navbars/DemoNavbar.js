@@ -53,7 +53,7 @@ function Header(props) {
     },
   };
 
-  useEffect(() => {
+  /*useEffect(() => {
     if (token) {
       const decodedToken = jwtDecode(token);
       const kohaAktive = new Date(decodedToken.exp * 1000);
@@ -64,7 +64,7 @@ function Header(props) {
         handleSignOut(); // Thirr handleSignOut direkt
       }
     }
-  }, [token]);
+  }, [token]);*/
 
   const handleSignOut = () => {
     localStorage.removeItem("token");

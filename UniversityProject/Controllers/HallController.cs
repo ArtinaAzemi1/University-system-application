@@ -81,6 +81,11 @@ namespace UniversityProject.Controllers
                 return BadRequest(ModelState);
             }
 
+            if (string.IsNullOrEmpty(hall.HallCode) || string.IsNullOrEmpty(hall.HallCapacity) || hall.LocationId <= 0)
+            {
+                return BadRequest("Të gjitha fushat janë të detyrueshme dhe duhet të kenë vlera valide.");
+            }
+
             await _context.Hall.AddAsync(hall);
             await _context.SaveChangesAsync();
 

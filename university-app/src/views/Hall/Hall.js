@@ -18,6 +18,8 @@ const Hall = () => {
   const [isEditHallOpen, setIsEditHallOpen] = useState(false);
   const [hallId, setHallId] = useState(null);
 
+  const [loactionId, setLocationId] = useState(null);
+
   const [search, setSearch] = useState ('');
 
   const [fshij, setFshij] = useState('');
@@ -136,7 +138,7 @@ const Hall = () => {
                               {/*<td>{hall.location ? `${hall.location.address}, ${hall.location.city}` : 'N/A'}</td>*/}
                               <td>
                                   <button className="btn btn-primary"  onClick={() => handleEditHallToggle(hall.hallID)}><FontAwesomeIcon icon={faPenToSquare} /></button> &nbsp;
-                                  <button className="btn btn-danger" onClick={()=> deleteHall(hall.hallID)}><FontAwesomeIcon icon={faBan} /></button>
+                                  <button className="btn btn-danger" onClick={()=> handleDelete(hall.hallID)}><FontAwesomeIcon icon={faBan} /></button>
                               </td>
                         </tr>
                       )
