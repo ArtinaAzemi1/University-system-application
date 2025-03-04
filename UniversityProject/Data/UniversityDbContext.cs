@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Migrations;
 using UniversityProject.Models;
 
 namespace UniversityProject.Data
 {
-    public class UniversityDbContext : IdentityDbContext
+    public class UniversityDbContext : IdentityDbContext<IdentityUser>
     {
         public UniversityDbContext(DbContextOptions<UniversityDbContext> options) : base(options)
         {
@@ -24,5 +25,8 @@ namespace UniversityProject.Data
         public DbSet<Location> Location { get; set; }
 
         public DbSet<Course> Course { get; set; }
+
+        public DbSet<User> Users { get; set; }
+
     }
 }

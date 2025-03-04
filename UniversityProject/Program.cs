@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using UniversityProject.Models.Auth;
+
 //using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -73,6 +74,7 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>()
         .AddEntityFrameworkStores<UniversityDbContext>()
         .AddDefaultTokenProviders();
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -84,6 +86,12 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    Task.Run(async () => await RoleInitializer.EnsureRolesAsync(services)).GetAwaiter().GetResult();
+}
+
 app.UseAuthorization();
 app.UseAuthentication();
 
@@ -93,3 +101,21 @@ app.UseCors("AllowAll");
 app.MapControllers();
 
 app.Run();
+
+public static class RoleInitializer
+{
+    public static async Task EnsureRolesAsync(IServiceProvider serviceProvider)
+    {
+        var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+
+        string[] roleNames = { "Admin", "Professor", "Student" };
+
+        foreach (var roleName in roleNames)
+        {
+            if (!await roleManager.RoleExistsAsync(roleName))
+            {
+                await roleManager.CreateAsync(new IdentityRole(roleName));
+            }
+        }
+    }
+}
