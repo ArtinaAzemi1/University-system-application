@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using UniversityProject.Models;
 
 namespace UniversityProject.Data
 {
-    public class UniversityDbContext : DbContext
+    public class UniversityDbContext : IdentityDbContext
     {
         public UniversityDbContext(DbContextOptions<UniversityDbContext> options) : base(options)
         {
