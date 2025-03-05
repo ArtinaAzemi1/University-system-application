@@ -55,8 +55,7 @@ namespace UniversityProject.Controllers
             {
                 x.GroupId,
                 x.GroupName,
-                x.Capacity,
-                x.ScheduleId
+                x.Capacity
             }).FirstOrDefaultAsync();
             if (group == null)
             {
@@ -79,7 +78,7 @@ namespace UniversityProject.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (string.IsNullOrEmpty(group.GroupName) || string.IsNullOrEmpty(group.Capacity) || group.ScheduleId <= 0)
+            if (string.IsNullOrEmpty(group.GroupName) || string.IsNullOrEmpty(group.Capacity))
             {
                 return BadRequest("Të gjitha fushat janë të detyrueshme dhe duhet të kenë vlera valide.");
             }

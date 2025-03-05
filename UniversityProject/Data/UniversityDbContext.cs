@@ -28,5 +28,18 @@ namespace UniversityProject.Data
 
         public DbSet<User> Users { get; set; }
 
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Krijimi i roleve
+            modelBuilder.Entity<IdentityRole>().HasData(
+                new IdentityRole { Id = Guid.NewGuid().ToString(), Name = "Admin", NormalizedName = "ADMIN", ConcurrencyStamp = Guid.NewGuid().ToString() },
+                new IdentityRole { Id = Guid.NewGuid().ToString(), Name = "Professor", NormalizedName = "PROFESSOR", ConcurrencyStamp = Guid.NewGuid().ToString() },
+                new IdentityRole { Id = Guid.NewGuid().ToString(), Name = "Student", NormalizedName = "STUDENT", ConcurrencyStamp = Guid.NewGuid().ToString() }
+            );
+        }
+
     }
 }
