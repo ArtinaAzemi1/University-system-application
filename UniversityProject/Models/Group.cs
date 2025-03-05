@@ -9,5 +9,8 @@ namespace UniversityProject.Models
         public string Capacity { get; set; }
 
         public virtual List<Schedule> Schedule { get; set; }
+        public int SemesterID { get; set; }
+        [ForeignKey(nameof(SemesterID))]
+        public virtual Semester Semester { get; set; }
     }
 }
