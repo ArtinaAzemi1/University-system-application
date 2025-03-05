@@ -8,8 +8,6 @@ namespace UniversityProject.Models
         public string GroupName { get; set; }
         public string Capacity { get; set; }
 
-        public int ScheduleId { get; set; }
-        [ForeignKey(nameof(ScheduleId))]
-        public virtual Schedule Schedule { get; set; }
+        public virtual List<Schedule> Schedule { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Numerics;
 
 namespace UniversityProject.Models
 {
@@ -14,7 +15,18 @@ namespace UniversityProject.Models
 
         public string Shift { get; set; }
 
-        public virtual List<Group> Group { get; set; }
+        public int GroupId { get; set; }
+        [ForeignKey(nameof(GroupId))]
+        public virtual Group Group { get; set; }
+
+        public int HallID { get; set; }
+        [ForeignKey(nameof(HallID))]
+        public virtual Hall Hall { get; set; }
+
+
+        public int CourseId { get; set; }
+        [ForeignKey(nameof(CourseId))]
+        public virtual Course Course { get; set; }
 
     }
 }
